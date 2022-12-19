@@ -1,0 +1,14 @@
+name: Deploy on push
+on:
+  push:
+    branches:
+      - main
+  pull_request: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Pull
+        run: ssh sasa@sliceer.com -p17000 "cd /var/www/html/blog_tourneer_info/ && /usr/bin/git pull origin master"
+
