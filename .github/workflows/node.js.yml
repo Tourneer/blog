@@ -3,7 +3,6 @@ name: CD
 on:
  push:
    branches: [ main, master ]
-
 jobs:
   build:
     runs-on: self-hosted
@@ -24,3 +23,44 @@ jobs:
      run: next build
    - name: Run next start
      run: next start
+
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ $default-branch ]
+  pull_request:
+    branches: [ $default-branch ]
+
+jobs:
+  build:
+
+    runs-on: self-hosted
+
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+   - name: Install dependencies
+   - name: Install sharp
+     run: npm install sharp
+   - name: Run next dev
+     run: next dev
+   - name: Run next dev
+     run: next dev
+   - name: Run next build
+     run: next build
+   - name: Run next start
+     run: next start
+    - run: npm ci
+    - run: npm run build --if-present
+    - run: npm test
