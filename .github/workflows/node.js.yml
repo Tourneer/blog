@@ -23,6 +23,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm install
-    - run: npm run build
-    - run: npm test
+        static_site_generator: next
+
+    - run: next dev
+    - run: next build
+    - run: next start
