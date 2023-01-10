@@ -5,7 +5,7 @@ const siteMetadata = {
   description: `A blog about what's new in the world of tennis.`,
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
+  siteUrl: 'https://blog.tourneer.info',
   siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
   siteLogo: '/static/images/only_logo.jpg',
   image: '/static/images/avatar.png',
