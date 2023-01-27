@@ -4,6 +4,7 @@ import siteMetadata from '@/data/siteMetadata'
 import { useState } from 'react'
 import Pagination from '@/components/Pagination'
 import formatDate from '@/lib/utils/formatDate'
+import NewsletterForm from '@/components/NewsletterForm'
 
 export default function ListLayout({ posts, title, initialDisplayPosts = [], pagination }) {
   const [searchValue, setSearchValue] = useState('')
@@ -83,6 +84,9 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
           })}
         </ul>
       </div>
+      {/* <div className="mx-auto w-1/2">
+        <NewsletterForm />
+      </div> */}
       {pagination && pagination.totalPages > 1 && !searchValue && (
         <Pagination currentPage={pagination.currentPage} totalPages={pagination.totalPages} />
       )}

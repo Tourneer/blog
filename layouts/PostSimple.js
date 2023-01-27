@@ -6,6 +6,7 @@ import siteMetadata from '@/data/siteMetadata'
 import formatDate from '@/lib/utils/formatDate'
 import Comments from '@/components/comments'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
+import NewsletterForm from '@/components/NewsletterForm'
 
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
   const { date, title } = frontMatter
@@ -66,6 +67,9 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
           </div>
         </div>
       </article>
+      {/* <div className="mx-auto w-1/2">
+        <NewsletterForm />
+      </div> */}
     </SectionContainer>
   )
 }

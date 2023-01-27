@@ -7,6 +7,7 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import Comments from '@/components/comments'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
+import NewsletterForm from '@/components/NewsletterForm'
 
 const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/master/data/blog/${fileName}`
 const discussUrl = (slug) =>
@@ -140,6 +141,9 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
           </div>
         </div>
       </article>
+      {/* <div className="mx-auto w-1/2">
+        <NewsletterForm />
+      </div> */}
     </SectionContainer>
   )
 }
